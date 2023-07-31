@@ -1,3 +1,5 @@
-FROM tomcat:8
-# Take the war and copy to webapps of tomcat
-COPY target/newapp.war /usr/local/tomcat/webapps/
+FROM nginx
+MAINTAINER vinayak
+COPY ./index.html /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
